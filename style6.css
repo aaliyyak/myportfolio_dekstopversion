@@ -1,0 +1,200 @@
+/* Reset styling */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #b6d5e7;
+    line-height: 1.5;
+    background-color: #000; /* Background hitam penuh */
+    height: 110vh;
+    display: flex;
+    justify-content: flex-end; /* Konten berada di tengah secara horizontal */
+    align-items: center; /* Konten berada di tengah secara vertikal */
+    position: relative;
+    
+}
+
+/* Header styling */
+header {
+    background: transparent;
+    color: #b6d5e7;
+    padding: 10px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #b6d5e7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: rgb(180, 35, 120);
+    text-decoration: underline; /* Warna berubah menjadi magenta saat hover */
+}
+
+/* project Section */
+.project {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px; /* Menambahkan jarak 50px antara navbar dan item */
+}
+
+/* project Container */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr); /* Menyusun 3 kolom */
+    gap: 20px;
+    justify-items: right;
+    position: relative;
+}
+
+/* Animasi berkedip lebih lambat */
+@keyframes blinkAlternate {
+    0%, 100% {
+        opacity: 1; /* Elemen terlihat penuh */
+    }
+    50% {
+        opacity: 0; /* Elemen tidak terlihat */
+    }
+}
+
+.project-item {
+    padding: 5px; /* Menambah padding agar item lebih besar */
+    width: 100px; /* Lebar item lebih besar */
+    animation: blinkAlternate 5s infinite ease-in-out;
+}
+
+
+/* Tambahkan delay untuk setiap elemen */
+.project-item:nth-child(1) {
+    animation-delay: 0s;
+}
+.project-item:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.project-item:nth-child(3) {
+    animation-delay: 1s;
+}
+.project-item:nth-child(4) {
+    animation-delay: 1.5s;
+}
+.project-item:nth-child(5) {
+    animation-delay: 2s;
+}
+.project-item:nth-child(6) {
+    animation-delay: 2.5s;
+}
+.project-item:nth-child(7) {
+    animation-delay: 3s;
+}
+.project-item:nth-child(8) {
+    animation-delay: 3.5s;
+}
+.project-item:nth-child(9) {
+    animation-delay: 4s;
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Sedikit memperbesar saat hover */
+    box-shadow: 0 0 60px rgba(180, 35, 120, 0.9), 0 0 25px rgba(180, 35, 120, 1);
+}
+
+
+.project-icon {
+    width: 100px; /* Lebar ikon lebih besar */
+    height: 180px; /* Tinggi ikon lebih besar */
+    object-fit: contain; /* Gambar tidak terpotong */
+    margin-bottom: 20px; /* Jarak bawah gambar */
+    border-radius: 20px; /* Membuat gambar lebih estetis */
+}
+
+.project-item p {
+    font-size: 10px;
+    color: #b6d5e7;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 60px) {
+    .project-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .project-item {
+        width: 200px;
+    }
+
+    .navbar h1 {
+        font-size: 28px;
+    }
+
+    .project h2 {
+        font-size: 24px;
+    }
+}
+
+/* Background image */
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url('anime4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 90%;
+    border-top-right-radius: 90%;
+    animation: backgroundMove 10s infinite alternate;
+}
+/* Animasi untuk item */
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0); /* Posisi awal dan akhir */
+    }
+    50% {
+        transform: translateY(-10px); /* Bergerak ke atas */
+    }
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .project-item {
+        width: 160px; /* Lebar item lebih kecil untuk layar kecil */
+    }
+
+    .project-icon {
+        width: 100px; /* Ukuran ikon untuk layar kecil */
+        height: 100px;
+    }
+}

@@ -1,0 +1,175 @@
+/* Reset styling */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #b6d5e7;
+    line-height: 1.5;
+    background-color: #000; /* Background hitam penuh */
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end; /* Konten berada di tengah secara horizontal */
+    align-items: right; /* Konten berada di tengah secara vertikal */
+    position: relative;
+}
+
+/* Header styling */
+header {
+    background: transparent;
+    color: #b6d5e7;
+    padding: 10px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #b6d5e7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: rgb(180, 35, 120);
+    text-decoration: underline; /* Warna berubah menjadi magenta saat hover */
+}
+
+/* Section styling */
+.education {
+    text-align: left;
+    color: #b6d5e7;
+    max-width: 680px;
+    margin-top: 150px; /* Memberi ruang di atas */
+    position: right;
+    left: 5; /* Menempatkan elemen ke kiri */
+    top: 5%;
+}
+
+.education h2 {
+    font-size: 1.9rem;
+    margin-bottom: 5px;
+    animation: fadeInText 1s ease-in forwards; /* Animasi teks */
+}
+
+.education h2 span {
+    color: rgb(180, 35, 120); /* Warna magenta untuk bagian tertentu */
+    animation: fadeInText 1.5s ease-in forwards; /* Penundaan animasi */
+}
+
+.education p.small-text {
+    font-size: 0.9rem;
+    color: #b6d5e7;
+    text-align: left; /* Align teks ke kiri */
+    line-height: 1.5; /* Jarak antar baris */
+    margin: 15px 0; /* Jarak antar paragraf */
+    animation: fadeInText 2s ease-in forwards; /* Penundaan animasi */
+}
+
+/* Social icons */
+.social-icons {
+    margin-top: 25px;
+}
+
+.social-icons a {
+    color: rgb(180, 35, 120); /* Warna ikon default */
+    margin: 0 3px;
+    font-size: 2rem;
+    transition: transform 0.5s, color 0.3s;
+}
+
+/* Hover efek: Warna ikon berubah saat hover */
+.social-icons a:hover,
+.social-icons a.icon-selected {
+    color: #b6d5e7 !important; /* Warna putih saat hover atau ikon dipilih */
+    transform: scale(1.2); /* Zoom saat hover */
+}
+
+/* Warna ikon saat ditekan (active) */
+.social-icons a:active {
+    color: #b6d5e7 !important; /* Warna putih saat ditekan */
+    transform: scale(1.1); /* Zoom sedikit saat ditekan */
+}
+
+.icon-selected {
+    color: #b6d5e7 !important; /* Warna putih untuk ikon yang dipilih */
+}
+
+/* Background image with animation */
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url('anime4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 90%;
+    border-top-right-radius: 90%;
+    animation: backgroundMove 10s infinite alternate; /* Animasi latar belakang */
+}
+
+/* Background animation */
+@keyframes backgroundMove {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+/* Tombol See More */
+.see-more-btn {
+    margin-top: 480px;
+    margin-right: 560px;
+    margin-bottom: 200px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: rgb(180, 35, 120); /* Warna magenta untuk teks */
+    border: 1px solid rgb(180, 35, 120); /* Border magenta */
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+}
+
+.see-more-btn:hover {
+    background-color: rgb(180, 35, 120); /* Latar belakang magenta saat hover */
+    color: #b6d5e7; /* Teks putih saat hover */
+}
+
+/* Animasi teks fade-in */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Gerakan dari bawah ke atas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*esperience

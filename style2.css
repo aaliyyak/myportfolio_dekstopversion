@@ -1,0 +1,196 @@
+/* Reset styling */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #b6d5e7;
+    line-height: 1.5;
+    background-color: #000; /* Background hitam penuh */
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end; /* Konten berada di tengah secara horizontal */
+    align-items: center; /* Konten berada di tengah secara vertikal */
+    position: relative;
+    
+}
+
+/* Header styling */
+header {
+    background: transparent;
+    color: #b6d5e7;
+    padding: 10px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #b6d5e7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: rgb(180, 35, 120);
+    text-decoration: underline; /* Warna berubah menjadi magenta saat hover */
+}
+
+/* Skills Section */
+.skills {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px; /* Menambahkan jarak 50px antara navbar dan item */
+}
+
+/* Skills Container */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Menyusun 3 kolom */
+    gap: 30px;
+    justify-items: center;
+    position: relative;
+}
+
+/* Animasi berkedip lebih lambat */
+@keyframes blinkAlternate {
+    0%, 100% {
+        opacity: 1; /* Elemen terlihat penuh */
+    }
+    50% {
+        opacity: 0; /* Elemen tidak terlihat */
+    }
+}
+
+.skill-item {
+    background-color: transparent;
+    border: 1px solid rgb(180, 35, 120);
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: blinkAlternate 6s infinite ease-in-out; /* Animasi berkedip dengan durasi lebih lambat */
+}
+
+/* Tambahkan delay untuk setiap elemen */
+.skill-item:nth-child(1) {
+    animation-delay: 0s;
+}
+.skill-item:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.skill-item:nth-child(3) {
+    animation-delay: 1s;
+}
+.skill-item:nth-child(4) {
+    animation-delay: 1.5s;
+}
+.skill-item:nth-child(5) {
+    animation-delay: 2s;
+}
+.skill-item:nth-child(6) {
+    animation-delay: 2.5s;
+}
+.skill-item:nth-child(7) {
+    animation-delay: 3s;
+}
+.skill-item:nth-child(8) {
+    animation-delay: 3.5s;
+}
+.skill-item:nth-child(9) {
+    animation-delay: 4s;
+}
+
+.skill-item:hover {
+    transform: scale(1.10); /* Efek zoom */
+    box-shadow: 0 0 30px rgba(180, 35, 120, 0.8), 0 0 20px rgba(180, 35, 120, 0.9); /* Cahaya neon */
+    background-color: transparent; /* Warna berubah menjadi magenta */
+    color: white; /* Teks berubah menjadi putih agar kontras */
+    border: 1px solid rgba(180, 35, 120, 0.8); /* Perbatasan berubah menjadi putih */
+}
+
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: fill;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 18px;
+    color: #b6d5e7;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .skill-item {
+        width: 130px;
+    }
+
+    .navbar h1 {
+        font-size: 28px;
+    }
+
+    .skills h2 {
+        font-size: 24px;
+    }
+}
+
+/* Background image */
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url('anime4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 90%;
+    border-top-right-radius: 90%;
+    animation: backgroundMove 10s infinite alternate;
+}
+/* Animasi untuk item */
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0); /* Posisi awal dan akhir */
+    }
+    50% {
+        transform: translateY(-10px); /* Bergerak ke atas */
+    }
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: top right;
+    }
+}
